@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
+import Overlay from "./components/Overlay";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,16 +9,11 @@ function App() {
 
   return (
     <div className="min-h-screen min-w-screen relative">
-      {/* Overlay */}
-      <div
-        className={`bg-black h-[100%] w-[100%] opacity-75 absolute ${
-          isMenuOpen ? "block" : "hidden"
-        }`}
-        onClick={() => {
-          setIsMenuOpen(false);
-          setIsOverlayOpen(false);
-        }}
-      ></div>
+      <Overlay
+        isOverlayOpen={isOverlayOpen}
+        setIsOverlayOpen={setIsOverlayOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
       <Menu
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
