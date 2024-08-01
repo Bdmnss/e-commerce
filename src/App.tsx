@@ -12,6 +12,7 @@ function App() {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [purchaseCount, setPurchaseCount] = useState(0);
+  const [isPurchaseCountVisible, setIsPurchaseCountVisible] = useState(false);
 
   return (
     <div className="min-h-screen min-w-screen flex flex-col">
@@ -32,11 +33,19 @@ function App() {
         setIsOverlayOpen={setIsOverlayOpen}
         isCartOpen={isCartOpen}
         setIsCartOpen={setIsCartOpen}
+        purchaseCount={purchaseCount}
+        isPurchaseCountVisible={isPurchaseCountVisible}
       />
 
       <Slider />
 
-      <Cart isCartOpen={isCartOpen} />
+      <Cart
+        isCartOpen={isCartOpen}
+        purchaseCount={purchaseCount}
+        isPurchaseCountVisible={isPurchaseCountVisible}
+        setPurchaseCount={setPurchaseCount}
+        setIsPurchaseCountVisible={setIsPurchaseCountVisible}
+      />
 
       <div className="flex flex-col px-[2.4rem]">
         <Text />
@@ -44,6 +53,7 @@ function App() {
         <Purchase
           purchaseCount={purchaseCount}
           setPurchaseCount={setPurchaseCount}
+          setIsPurchaseCountVisible={setIsPurchaseCountVisible}
         />
       </div>
     </div>

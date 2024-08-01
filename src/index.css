@@ -19,7 +19,7 @@ body {
 
 @keyframes slide-left-to-right {
   from {
-    transform: translateX(-100%);
+    transform: translateX(-101%);
   }
   to {
     transform: translateX(0);
@@ -31,7 +31,7 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-101%);
   }
 }
 

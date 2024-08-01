@@ -1,14 +1,19 @@
 interface PurchaseProps {
   purchaseCount: number;
   setPurchaseCount: React.Dispatch<React.SetStateAction<number>>;
+  setIsPurchaseCountVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Purchase: React.FC<PurchaseProps> = ({
   purchaseCount,
   setPurchaseCount,
+  setIsPurchaseCountVisible,
 }) => {
   const handleMinus = () => {
-    if (purchaseCount === 0) return;
+    if (purchaseCount === 0) {
+      setIsPurchaseCountVisible(false);
+      return;
+    }
     setPurchaseCount(purchaseCount - 1);
   };
 
@@ -53,8 +58,10 @@ const Purchase: React.FC<PurchaseProps> = ({
       </div>
 
       <button
+        disabled={purchaseCount === 0}
+        onClick={() => setIsPurchaseCountVisible(true)}
         className="w-[100%] bg-[#ff7e1b] button-shadow flex items-center justify-center gap-[1.6rem]
-          rounded-[1rem] text-[1.6rem] text-white font-bold py-[1.6rem]"
+          rounded-[1rem] text-[1.6rem] text-white font-bold py-[1.6rem] d disabled:opacity-75"
       >
         <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
           <path
