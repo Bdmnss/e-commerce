@@ -5,11 +5,13 @@ import Overlay from "./components/Overlay";
 import Slider from "./components/Slider";
 import Cart from "./components/Cart";
 import Text from "./components/Text";
+import Purchase from "./components/Purchase";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [purchaseCount, setPurchaseCount] = useState(0);
 
   return (
     <div className="min-h-screen min-w-screen flex flex-col">
@@ -38,6 +40,11 @@ function App() {
 
       <div className="flex flex-col px-[2.4rem]">
         <Text />
+
+        <Purchase
+          purchaseCount={purchaseCount}
+          setPurchaseCount={setPurchaseCount}
+        />
       </div>
     </div>
   );
