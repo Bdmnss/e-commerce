@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Overlay from "./components/Overlay";
+import Slider from "./components/Slider";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,6 +24,7 @@ function App() {
         setIsMenuOpen={setIsMenuOpen}
         setIsOverlayOpen={setIsOverlayOpen}
       />
+      <Slider />
     </div>
   );
 }

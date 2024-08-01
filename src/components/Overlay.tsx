@@ -11,7 +11,7 @@ const Overlay: React.FC<OverlayProps> = ({
 }) => {
   return (
     <div
-      className={`bg-black h-[100%] w-[100%] opacity-75 absolute ${
+      className={`bg-black h-[100%] w-[100%] opacity-75 absolute z-1 ${
         isOverlayOpen ? "block" : "hidden"
       }`}
       onClick={() => {
