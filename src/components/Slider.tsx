@@ -19,7 +19,7 @@ const Slider = () => {
     }
   };
   return (
-    <div className="h-[30rem] w-[100%] relative overflow-hidden rounded-[1rem]">
+    <div className="h-[30rem] w-[100%] relative overflow-hidden rounded-[1rem] mb-[2.4rem]">
       <div
         className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
           slideIndex === 1
