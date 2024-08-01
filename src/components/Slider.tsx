@@ -19,9 +19,9 @@ const Slider = () => {
     }
   };
   return (
-    <div className="h-[30rem] relative overflow-hidden rounded-[1rem]">
+    <div className="h-[30rem] w-[100%] relative overflow-hidden rounded-[1rem]">
       <div
-        className={`absolute top-0 w-[100%] transition-transform duration-500 ease-in-out ${
+        className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
           slideIndex === 1
             ? "translate-x-[0%]"
             : slideIndex === 2
@@ -31,10 +31,14 @@ const Slider = () => {
             : "translate-x-[-300%]"
         }`}
       >
-        <img src="./images/image-product-1.jpg" alt="photo 1" />
+        <img
+          src="./images/image-product-1.jpg"
+          alt="photo 1"
+          className="h-[100%] w-[100%] object-cover"
+        />
       </div>
       <div
-        className={`absolute top-0 w-[100%] transition-transform duration-500 ease-in-out ${
+        className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
           slideIndex === 1
             ? "translate-x-[100%]"
             : slideIndex === 2
@@ -44,10 +48,14 @@ const Slider = () => {
             : "translate-x-[-200%]"
         }`}
       >
-        <img src="./images/image-product-2.jpg" alt="photo 2" />
+        <img
+          src="./images/image-product-2.jpg"
+          alt="photo 2"
+          className="h-[100%] w-[100%] object-cover"
+        />
       </div>
       <div
-        className={`absolute top-0 w-[100%] transition-transform duration-500 ease-in-out ${
+        className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
           slideIndex === 1
             ? "translate-x-[200%]"
             : slideIndex === 2
@@ -57,10 +65,14 @@ const Slider = () => {
             : "translate-x-[-100%]"
         }`}
       >
-        <img src="./images/image-product-3.jpg" alt="photo 3" />
+        <img
+          src="./images/image-product-3.jpg"
+          alt="photo 3"
+          className="h-[100%] w-[100%] object-cover"
+        />
       </div>
       <div
-        className={`absolute top-0 w-[100%] transition-transform duration-500 ease-in-out ${
+        className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
           slideIndex === 1
             ? "translate-x-[300%]"
             : slideIndex === 2
@@ -70,7 +82,11 @@ const Slider = () => {
             : "translate-x-[0%]"
         }`}
       >
-        <img src="./images/image-product-4.jpg" alt="photo 4" />
+        <img
+          src="./images/image-product-4.jpg"
+          alt="photo 4"
+          className="h-[100%] w-[100%] object-cover"
+        />
       </div>
 
       <div
