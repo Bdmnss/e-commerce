@@ -6,6 +6,7 @@ import Slider from "./components/Slider";
 import Cart from "./components/Cart";
 import Text from "./components/Text";
 import Purchase from "./components/Purchase";
+import OpenedSlider from "./components/OpenedSlider";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +14,8 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [purchaseCount, setPurchaseCount] = useState(0);
   const [isPurchaseCountVisible, setIsPurchaseCountVisible] = useState(false);
+  const [isInsideSliderOpened, setIsInsideSliderOpened] = useState(false);
+  const [openedSlideIndex, setOpenedSlideIndex] = useState(1);
 
   return (
     <div className="min-h-screen min-w-screen flex flex-col">
@@ -20,6 +23,7 @@ function App() {
         isOverlayOpen={isOverlayOpen}
         setIsOverlayOpen={setIsOverlayOpen}
         setIsMenuOpen={setIsMenuOpen}
+        setIsInsideSliderOpened={setIsInsideSliderOpened}
       />
 
       <Menu
@@ -37,8 +41,12 @@ function App() {
         isPurchaseCountVisible={isPurchaseCountVisible}
       />
 
-      <div className="lg:w-[80%] mx-auto lg:flex lg:justify-center lg:items-center lg:mt-[9rem] lg:gap-[13rem]">
-        <Slider />
+      <div className="lg:w-[80%] lg:mx-auto lg:flex lg:justify-center lg:items-center lg:mt-[9rem] lg:gap-[13rem]">
+        <Slider
+          setIsInsideSliderOpened={setIsInsideSliderOpened}
+          setOpenedSlideIndex={setOpenedSlideIndex}
+          setIsOverlayOpen={setIsOverlayOpen}
+        />
 
         <div className="flex flex-col px-[2.4rem]">
           <Text />
@@ -57,6 +65,14 @@ function App() {
         isPurchaseCountVisible={isPurchaseCountVisible}
         setPurchaseCount={setPurchaseCount}
         setIsPurchaseCountVisible={setIsPurchaseCountVisible}
+      />
+
+      <OpenedSlider
+        openedSlideIndex={openedSlideIndex}
+        setOpenedSlideIndex={setOpenedSlideIndex}
+        isInsideSliderOpened={isInsideSliderOpened}
+        setIsInsideSliderOpened={setIsInsideSliderOpened}
+        setIsOverlayOpen={setIsOverlayOpen}
       />
     </div>
   );

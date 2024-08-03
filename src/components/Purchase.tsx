@@ -44,6 +44,7 @@ const Purchase: React.FC<PurchaseProps> = ({
           justify-between mb-[1.6rem] lg:mb-0 lg:w-[50%]"
         >
           <img
+            className="cursor-pointer"
             src="./images/icon-minus.svg"
             alt="minus icon"
             onClick={handleMinus}
@@ -52,6 +53,7 @@ const Purchase: React.FC<PurchaseProps> = ({
             {purchaseCount}
           </p>
           <img
+            className="cursor-pointer"
             src="./images/icon-plus.svg"
             alt="plus icon"
             onClick={handlePlus}
@@ -62,7 +64,7 @@ const Purchase: React.FC<PurchaseProps> = ({
           disabled={purchaseCount === 0}
           onClick={() => setIsPurchaseCountVisible(true)}
           className="w-[100%] bg-[#ff7e1b] button-shadow flex items-center justify-center gap-[1.6rem]
-          rounded-[1rem] text-[1.6rem] text-white font-bold py-[1.6rem] d disabled:opacity-75"
+          rounded-[1rem] text-[1.6rem] text-white font-bold py-[1.6rem] disabled:opacity-75 cursor-pointer"
         >
           <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
             <path

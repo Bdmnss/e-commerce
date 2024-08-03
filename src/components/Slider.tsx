@@ -1,6 +1,16 @@
 import { useState } from "react";
 
-const Slider = () => {
+type SliderProps = {
+  setIsInsideSliderOpened: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenedSlideIndex: React.Dispatch<React.SetStateAction<number>>;
+  setIsOverlayOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Slider: React.FC<SliderProps> = ({
+  setIsInsideSliderOpened,
+  setOpenedSlideIndex,
+  setIsOverlayOpen,
+}) => {
   const [slideIndex, setSlideIndex] = useState(1);
 
   const handlePrev = () => {
@@ -19,12 +29,17 @@ const Slider = () => {
     }
   };
   return (
-    <div className="flex flex-col w-[100%] justify-center lg:w-[50%]">
+    <div className="flex lg:flex-col w-[100%] justify-center lg:w-[50%]">
       <div
-        className="h-[30rem] w-[37.5rem] relative overflow-hidden rounded-[1rem] mb-[2.4rem] lg:h-[45rem] 
-      lg:w-[45rem]"
+        className="h-[30rem] w-[37.5rem] relative overflow-hidden rounded-[1rem] mb-[2.4rem] cursor-pointer
+        lg:h-[45rem] lg:w-[45rem]"
       >
         <div
+          onClick={() => {
+            setIsInsideSliderOpened(true);
+            setOpenedSlideIndex(slideIndex);
+            setIsOverlayOpen(true);
+          }}
           className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
             slideIndex === 1
               ? "translate-x-[0%]"
@@ -42,6 +57,11 @@ const Slider = () => {
           />
         </div>
         <div
+          onClick={() => {
+            setIsInsideSliderOpened(true);
+            setOpenedSlideIndex(slideIndex);
+            setIsOverlayOpen(true);
+          }}
           className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
             slideIndex === 1
               ? "translate-x-[100%]"
@@ -59,6 +79,11 @@ const Slider = () => {
           />
         </div>
         <div
+          onClick={() => {
+            setIsInsideSliderOpened(true);
+            setOpenedSlideIndex(slideIndex);
+            setIsOverlayOpen(true);
+          }}
           className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
             slideIndex === 1
               ? "translate-x-[200%]"
@@ -76,6 +101,11 @@ const Slider = () => {
           />
         </div>
         <div
+          onClick={() => {
+            setIsInsideSliderOpened(true);
+            setOpenedSlideIndex(slideIndex);
+            setIsOverlayOpen(true);
+          }}
           className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
             slideIndex === 1
               ? "translate-x-[300%]"
@@ -115,7 +145,7 @@ const Slider = () => {
           }`}
         >
           <img
-            className={`${slideIndex === 1 && "opacity-50"}`}
+            className={`hover:opacity-50 ${slideIndex === 1 && "opacity-50"}`}
             src="./images/image-product-1-thumbnail.jpg"
             alt="photo 1 thumbnail"
             onClick={() => setSlideIndex(1)}
@@ -128,7 +158,7 @@ const Slider = () => {
           }`}
         >
           <img
-            className={`${slideIndex === 2 && "opacity-50"}`}
+            className={`hover:opacity-50 ${slideIndex === 2 && "opacity-50"}`}
             src="./images/image-product-2-thumbnail.jpg"
             alt="photo 2 thumbnail"
             onClick={() => setSlideIndex(2)}
@@ -141,7 +171,7 @@ const Slider = () => {
           }`}
         >
           <img
-            className={`${slideIndex === 3 && "opacity-50"}`}
+            className={`hover:opacity-50 ${slideIndex === 3 && "opacity-50"}`}
             src="./images/image-product-3-thumbnail.jpg"
             alt="photo 3 thumbnail"
             onClick={() => setSlideIndex(3)}
@@ -154,7 +184,7 @@ const Slider = () => {
           }`}
         >
           <img
-            className={`${slideIndex === 4 && "opacity-50"}`}
+            className={`hover:opacity-50 ${slideIndex === 4 && "opacity-50"}`}
             src="./images/image-product-4-thumbnail.jpg"
             alt="photo 4 thumbnail"
             onClick={() => setSlideIndex(4)}
