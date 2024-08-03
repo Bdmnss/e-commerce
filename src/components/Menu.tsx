@@ -4,6 +4,8 @@ interface MenuProps {
   setIsOverlayOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+const navItems = ["Collection", "Men", "Woman", "About", "Contact"];
+
 const Menu: React.FC<MenuProps> = ({
   isMenuOpen,
   setIsMenuOpen,
@@ -28,11 +30,9 @@ const Menu: React.FC<MenuProps> = ({
         />
       </div>
       <div className="flex flex-col gap-[2rem] text-[1.8rem] text-[#1d2026] font-bold">
-        <p>Collections</p>
-        <p>Men</p>
-        <p>Women</p>
-        <p>About</p>
-        <p>Contact</p>
+        {navItems.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))}
       </div>
     </nav>
   );

@@ -7,6 +7,8 @@ interface HeaderProps {
   isPurchaseCountVisible: boolean;
 }
 
+const navItems = ["Collection", "Men", "Woman", "About", "Contact"];
+
 const Header: React.FC<HeaderProps> = ({
   setIsMenuOpen,
   setIsOverlayOpen,
@@ -16,9 +18,13 @@ const Header: React.FC<HeaderProps> = ({
   isPurchaseCountVisible,
 }) => {
   return (
-    <header className="flex justify-between items-center p-[2.4rem]">
-      <div className="flex items-center gap-[1.6rem]">
+    <header
+      className="flex justify-between items-center p-[2.4rem] lg:px-[16rem] lg:border-b-[1px] lg:border-b-[
+#e4e9f2]"
+    >
+      <div className="flex items-center gap-[1.6rem] md:gap-[5.6rem]">
         <img
+          className="md:hidden"
           src="./images/icon-menu.svg"
           alt="menu icon"
           onClick={() => {
@@ -32,9 +38,19 @@ const Header: React.FC<HeaderProps> = ({
             fill="#1D2026"
           />
         </svg>
+        <div className="hidden md:flex items-center gap-[3.2rem] text-[1.5rem] text-[#69707d] mt-[8px]">
+          {navItems.map((item, index) => (
+            <p
+              key={index}
+              className="border-b-4 border-transparent hover:border-[#ff7e1b] cursor-pointer"
+            >
+              {item}
+            </p>
+          ))}
+        </div>
       </div>
       <div className="flex items-center gap-[2.2rem]">
-        <div className="flex">
+        <div className="flex cursor-pointer">
           <svg
             onClick={() => setIsCartOpen(!isCartOpen)}
             width="22"
@@ -58,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({
         <img
           src="./images/image-avatar.png"
           alt="avatar image"
-          className="w-[2.4rem] h-[2.4rem]"
+          className="w-[2.4rem] h-[2.4rem] cursor-pointer md:w-[5rem] md:h-[5rem]"
         />
       </div>
     </header>

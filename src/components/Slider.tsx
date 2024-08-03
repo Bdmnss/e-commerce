@@ -19,87 +19,147 @@ const Slider = () => {
     }
   };
   return (
-    <div className="h-[30rem] w-[100%] relative overflow-hidden rounded-[1rem] mb-[2.4rem]">
+    <div className="flex flex-col w-[100%] justify-center lg:w-[50%]">
       <div
-        className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
-          slideIndex === 1
-            ? "translate-x-[0%]"
-            : slideIndex === 2
-            ? "translate-x-[-100%]"
-            : slideIndex === 3
-            ? "translate-x-[-200%]"
-            : "translate-x-[-300%]"
-        }`}
+        className="h-[30rem] w-[37.5rem] relative overflow-hidden rounded-[1rem] mb-[2.4rem] lg:h-[45rem] 
+      lg:w-[45rem]"
       >
-        <img
-          src="./images/image-product-1.jpg"
-          alt="photo 1"
-          className="h-[100%] w-[100%] object-cover"
-        />
-      </div>
-      <div
-        className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
-          slideIndex === 1
-            ? "translate-x-[100%]"
-            : slideIndex === 2
-            ? "translate-x-[0%]"
-            : slideIndex === 3
-            ? "translate-x-[-100%]"
-            : "translate-x-[-200%]"
-        }`}
-      >
-        <img
-          src="./images/image-product-2.jpg"
-          alt="photo 2"
-          className="h-[100%] w-[100%] object-cover"
-        />
-      </div>
-      <div
-        className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
-          slideIndex === 1
-            ? "translate-x-[200%]"
-            : slideIndex === 2
-            ? "translate-x-[100%]"
-            : slideIndex === 3
-            ? "translate-x-[0%]"
-            : "translate-x-[-100%]"
-        }`}
-      >
-        <img
-          src="./images/image-product-3.jpg"
-          alt="photo 3"
-          className="h-[100%] w-[100%] object-cover"
-        />
-      </div>
-      <div
-        className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
-          slideIndex === 1
-            ? "translate-x-[300%]"
-            : slideIndex === 2
-            ? "translate-x-[200%]"
-            : slideIndex === 3
-            ? "translate-x-[100%]"
-            : "translate-x-[0%]"
-        }`}
-      >
-        <img
-          src="./images/image-product-4.jpg"
-          alt="photo 4"
-          className="h-[100%] w-[100%] object-cover"
-        />
+        <div
+          className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
+            slideIndex === 1
+              ? "translate-x-[0%]"
+              : slideIndex === 2
+              ? "translate-x-[-100%]"
+              : slideIndex === 3
+              ? "translate-x-[-200%]"
+              : "translate-x-[-300%]"
+          }`}
+        >
+          <img
+            src="./images/image-product-1.jpg"
+            alt="photo 1"
+            className="h-[100%] w-[100%] object-cover"
+          />
+        </div>
+        <div
+          className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
+            slideIndex === 1
+              ? "translate-x-[100%]"
+              : slideIndex === 2
+              ? "translate-x-[0%]"
+              : slideIndex === 3
+              ? "translate-x-[-100%]"
+              : "translate-x-[-200%]"
+          }`}
+        >
+          <img
+            src="./images/image-product-2.jpg"
+            alt="photo 2"
+            className="h-[100%] w-[100%] object-cover"
+          />
+        </div>
+        <div
+          className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
+            slideIndex === 1
+              ? "translate-x-[200%]"
+              : slideIndex === 2
+              ? "translate-x-[100%]"
+              : slideIndex === 3
+              ? "translate-x-[0%]"
+              : "translate-x-[-100%]"
+          }`}
+        >
+          <img
+            src="./images/image-product-3.jpg"
+            alt="photo 3"
+            className="h-[100%] w-[100%] object-cover"
+          />
+        </div>
+        <div
+          className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
+            slideIndex === 1
+              ? "translate-x-[300%]"
+              : slideIndex === 2
+              ? "translate-x-[200%]"
+              : slideIndex === 3
+              ? "translate-x-[100%]"
+              : "translate-x-[0%]"
+          }`}
+        >
+          <img
+            src="./images/image-product-4.jpg"
+            alt="photo 4"
+            className="h-[100%] w-[100%] object-cover"
+          />
+        </div>
+        <div
+          onClick={handlePrev}
+          className="flex items-center justify-center w-[4rem] h-[4rem] bg-white rounded-full absolute top-[45%] 
+          left-[5%] lg:hidden"
+        >
+          <img src="./images/icon-previous.svg" alt="previous icon" />
+        </div>
+        <div
+          onClick={handleNext}
+          className="flex items-center justify-center w-[4rem] h-[4rem] bg-white rounded-full absolute top-[45%] 
+          right-[5%] lg:hidden"
+        >
+          <img src="./images/icon-next.svg" alt="next icon" />
+        </div>
       </div>
 
-      <div
-        onClick={handlePrev}
-        className="flex items-center justify-center w-[4rem] h-[4rem] bg-white rounded-full absolute top-[45%] left-[5%]"
-      >
-        <img src="./images/icon-previous.svg" alt="previous icon" />
-      </div>
-      <div
-        onClick={handleNext}
-        className="flex items-center justify-center w-[4rem] h-[4rem] bg-white rounded-full absolute top-[45%] right-[5%]"
-      >
-        <img src="./images/icon-next.svg" alt="next icon" />
+      <div className="hidden lg:flex justify-between">
+        <div
+          className={`w-[8.8rem] rounded-[1rem] cursor-pointer overflow-hidden ${
+            slideIndex === 1 && "border-[2px] border-[#ff7e1b]"
+          }`}
+        >
+          <img
+            className={`${slideIndex === 1 && "opacity-50"}`}
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="photo 1 thumbnail"
+            onClick={() => setSlideIndex(1)}
+          />
+        </div>
+
+        <div
+          className={`w-[8.8rem] rounded-[1rem] cursor-pointer overflow-hidden ${
+            slideIndex === 2 && "border-[2px] border-[#ff7e1b]"
+          }`}
+        >
+          <img
+            className={`${slideIndex === 2 && "opacity-50"}`}
+            src="./images/image-product-2-thumbnail.jpg"
+            alt="photo 2 thumbnail"
+            onClick={() => setSlideIndex(2)}
+          />
+        </div>
+
+        <div
+          className={`w-[8.8rem] rounded-[1rem] cursor-pointer overflow-hidden ${
+            slideIndex === 3 && "border-[2px] border-[#ff7e1b]"
+          }`}
+        >
+          <img
+            className={`${slideIndex === 3 && "opacity-50"}`}
+            src="./images/image-product-3-thumbnail.jpg"
+            alt="photo 3 thumbnail"
+            onClick={() => setSlideIndex(3)}
+          />
+        </div>
+
+        <div
+          className={`w-[8.8rem] rounded-[1rem] cursor-pointer overflow-hidden ${
+            slideIndex === 4 && "border-[2px] border-[#ff7e1b]"
+          }`}
+        >
+          <img
+            className={`${slideIndex === 4 && "opacity-50"}`}
+            src="./images/image-product-4-thumbnail.jpg"
+            alt="photo 4 thumbnail"
+            onClick={() => setSlideIndex(4)}
+          />
+        </div>
       </div>
     </div>
   );

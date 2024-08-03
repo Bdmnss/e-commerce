@@ -37,7 +37,19 @@ function App() {
         isPurchaseCountVisible={isPurchaseCountVisible}
       />
 
-      <Slider />
+      <div className="lg:w-[80%] mx-auto lg:flex lg:justify-center lg:items-center lg:mt-[9rem] lg:gap-[13rem]">
+        <Slider />
+
+        <div className="flex flex-col px-[2.4rem]">
+          <Text />
+
+          <Purchase
+            purchaseCount={purchaseCount}
+            setPurchaseCount={setPurchaseCount}
+            setIsPurchaseCountVisible={setIsPurchaseCountVisible}
+          />
+        </div>
+      </div>
 
       <Cart
         isCartOpen={isCartOpen}
@@ -46,16 +58,6 @@ function App() {
         setPurchaseCount={setPurchaseCount}
         setIsPurchaseCountVisible={setIsPurchaseCountVisible}
       />
-
-      <div className="flex flex-col px-[2.4rem]">
-        <Text />
-
-        <Purchase
-          purchaseCount={purchaseCount}
-          setPurchaseCount={setPurchaseCount}
-          setIsPurchaseCountVisible={setIsPurchaseCountVisible}
-        />
-      </div>
     </div>
   );
 }
