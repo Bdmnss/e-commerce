@@ -36,9 +36,11 @@ const Slider: React.FC<SliderProps> = ({
       >
         <div
           onClick={() => {
-            setIsInsideSliderOpened(true);
-            setOpenedSlideIndex(slideIndex);
-            setIsOverlayOpen(true);
+            if (window.innerWidth > 1024) {
+              setIsInsideSliderOpened(true);
+              setOpenedSlideIndex(slideIndex);
+              setIsOverlayOpen(true);
+            }
           }}
           className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
             slideIndex === 1
@@ -58,9 +60,11 @@ const Slider: React.FC<SliderProps> = ({
         </div>
         <div
           onClick={() => {
-            setIsInsideSliderOpened(true);
-            setOpenedSlideIndex(slideIndex);
-            setIsOverlayOpen(true);
+            if (window.innerWidth > 1024) {
+              setIsInsideSliderOpened(true);
+              setOpenedSlideIndex(slideIndex);
+              setIsOverlayOpen(true);
+            }
           }}
           className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
             slideIndex === 1
@@ -80,9 +84,11 @@ const Slider: React.FC<SliderProps> = ({
         </div>
         <div
           onClick={() => {
-            setIsInsideSliderOpened(true);
-            setOpenedSlideIndex(slideIndex);
-            setIsOverlayOpen(true);
+            if (window.innerWidth > 1024) {
+              setIsInsideSliderOpened(true);
+              setOpenedSlideIndex(slideIndex);
+              setIsOverlayOpen(true);
+            }
           }}
           className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
             slideIndex === 1
@@ -102,9 +108,11 @@ const Slider: React.FC<SliderProps> = ({
         </div>
         <div
           onClick={() => {
-            setIsInsideSliderOpened(true);
-            setOpenedSlideIndex(slideIndex);
-            setIsOverlayOpen(true);
+            if (window.innerWidth > 1024) {
+              setIsInsideSliderOpened(true);
+              setOpenedSlideIndex(slideIndex);
+              setIsOverlayOpen(true);
+            }
           }}
           className={`absolute top-0 w-[100%] h-[100%] transition-transform duration-500 ease-in-out ${
             slideIndex === 1
